@@ -34,7 +34,7 @@ local my_tags = {
 	[2] = { name = "term", hotkey = "i", layout = awful.layout.suit.tile },
 	[3] = { name = "IDE", hotkey = "n", layout = awful.layout.suit.tile },
 	[4] = { name = "notes", hotkey = "y", layout = awful.layout.suit.tile },
-	[5] = { name = "other", layout = awful.layout.suit.floating },
+	[5] = { name = "other", hotkey = "å", layout = awful.layout.suit.floating },
 }
 
 --- Setup run or raise hotkeys (both of these share the same tag and run command)
@@ -500,7 +500,7 @@ for i, tag_def in pairs(my_tags) do
 
 		-- Hotkey. For others, use run or raise to view tag
 		awful.key({ modkey }, tag_def.hotkey, function()
-			if tag_def.hotkey and (tag_def.name == "term" or tag_def.name == "IDE") then
+			if tag_def.name == "term" or tag_def.name == "IDE" then
 				local screen = awful.screen.focused()
 				local tag = screen.tags[i]
 				if tag then
@@ -523,12 +523,10 @@ for i, tag_def in pairs(my_tags) do
 
 		-- Hotkey
 		awful.key({ modkey, "Control" }, tag_def.hotkey, function()
-			if tag_def.hotkey then
-				local screen = awful.screen.focused()
-				local tag = screen.tags[i]
-				if tag then
-					awful.tag.viewtoggle(tag)
-				end
+			local screen = awful.screen.focused()
+			local tag = screen.tags[i]
+			if tag then
+				awful.tag.viewtoggle(tag)
 			end
 		end, { description = "toggle tag #" .. i, group = "tag" }),
 
@@ -546,15 +544,14 @@ for i, tag_def in pairs(my_tags) do
 				end
 			end
 		end, { description = "move focused client to tag #" .. i, group = "tag" }),
+
 		-- Hotkey
 		awful.key({ modkey, "Shift" }, tag_def.hotkey, function()
-			if tag_def.hotkey then
-				if client.focus then
-					local tag = client.focus.screen.tags[i]
-					if tag then
-						client.focus:move_to_tag(tag)
-						tag:view_only()
-					end
+			if client.focus then
+				local tag = client.focus.screen.tags[i]
+				if tag then
+					client.focus:move_to_tag(tag)
+					tag:view_only()
 				end
 			end
 		end, { description = "move focused client to tag #" .. i, group = "tag" })
