@@ -7,7 +7,6 @@
 - [zsh](.zshrc)
 - [bash](.bashrc)
 - [Awesome WM](rc.lua)
-- [Zed](zed)
 
 ## Sym links
 

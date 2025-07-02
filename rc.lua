@@ -416,7 +416,7 @@ globalkeys = gears.table.join(
 	--- CUSTOM key bindings
 	------------------------------------------------------------------------------
 	awful.key({ modkey, "Shift" }, "a", function()
-		awful.spawn.with_shell("~/bin/toggle-audio.sh")
+		awful.spawn.with_shell("toggle-audio.sh")
 	end, { description = "toggle audio", group = "tag" })
 )
 
@@ -665,8 +665,9 @@ client.connect_signal("manage", function(c)
 	-- if not awesome.startup then awful.client.setslave(c) end
 
 	-- CUSTOM debug clients
-	print("AWESOME: New client:")
-	print("AWESOME: Class: ", c.class, " Name: ", c.name, " Floating: ", c.floating)
+	-- Debug statements removed for privacy
+	-- print("AWESOME: New client:")
+	-- print("AWESOME: Class: ", c.class, " Name: ", c.name, " Floating: ", c.floating)
 
 	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
 		-- Prevent clients from being unreachable after screen count changes.
