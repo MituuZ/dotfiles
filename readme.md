@@ -9,11 +9,14 @@
 - [Zed](zed)
 
 # Sym links
+
+Run from this directory
+
 ```bash
-ln -s ~/IdeaProjects/vimrc/.ideavimrc ~/.ideavimrc
-ln -s ~/IdeaProjects/vimrc/.vimrc ~/.vimrc
-ln -s ~/IdeaProjects/vimrc/.zshrc ~/.zshrc
-ln -s ~/IdeaProjects/vimrc/rc.luad ~/.config/awesome/rc.lua
+ln -s .ideavimrc ~/.ideavimrc
+ln -s .vimrc ~/.vimrc
+ln -s .zshrc ~/.zshrc
+ln -s rc.luad ~/.config/awesome/rc.lua
 ```
 
 # Git
@@ -21,6 +24,6 @@ Setup gitrc
 
 ```bash
 echo '[include]' >> ~/.gitconfig
-echo '    path = ~/IdeaProjects/vimrc/.gitrc' >> ~/.gitconfig
+echo "    path = $(pwd)/.gitrc" >> ~/.gitconfig
 ```
-   
+
