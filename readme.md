@@ -13,10 +13,10 @@
 Run from this directory
 
 ```bash
-ln -s .ideavimrc ~/.ideavimrc
-ln -s .vimrc ~/.vimrc
-ln -s .zshrc ~/.zshrc
-ln -s rc.luad ~/.config/awesome/rc.lua
+ln -s /path/to/.ideavimrc /path/to/.ideavimrc
+ln -s /path/to/.vimrc /path/to/.vimrc
+ln -s /path/to/.zshrc /path/to/.zshrc
+ln -s /path/to/rc.lua /path/to/.config/awesome/rc.lua
 ```
 
 ## Git

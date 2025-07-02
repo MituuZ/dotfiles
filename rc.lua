@@ -50,6 +50,7 @@ local my_rules = {
 	obsidian = { class = "obsidian", tag = "notes" },
 	jetbrains_studio = { class = "jetbrains-studio", tag = "IDE" },
 	jetbrains_idea_ce = { class = "jetbrains-idea-ce", tag = "IDE" },
+	jetbrains_idea = { class = "jetbrains-idea", tag = "IDE" },
 	jetbrains_rustrover = { class = "jetbrains-rustrover", tag = "IDE" },
 }
 
@@ -665,7 +666,6 @@ client.connect_signal("manage", function(c)
 	-- if not awesome.startup then awful.client.setslave(c) end
 
 	-- CUSTOM debug clients
-	-- Debug statements removed for privacy
 	-- print("AWESOME: New client:")
 	-- print("AWESOME: Class: ", c.class, " Name: ", c.name, " Floating: ", c.floating)
 
