@@ -245,6 +245,7 @@ awful.screen.connect_for_each_screen(function(s)
 		awful.tag.add(tag_def.name, {
 			layout = tag_def.layout,
 			screen = s,
+			gap = 3,
 		})
 	end
 
