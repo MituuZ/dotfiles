@@ -1,0 +1,72 @@
+source ~/.vimrc
+
+" Run actions
+map <Leader>tr <action>(ContextRun)
+map <Leader>trs gg<action>(RunClass)<C-O>
+map <Leader>tre <action>(Run)
+map <Leader>tc <action>(RunCoverage)
+map <Leader>rc <action>(ChooseRunConfiguration)
+map <Leader>h <action>(Stop)
+
+" Debug
+map <Leader>dr <action>(ContextDebug)
+map <Leader>dre <action>(Debug)
+map <Leader>da <action>(ToggleLineBreakpoint)
+map <Leader>dsa <action>(Debugger.RemoveAllBreakpoints)
+map <Leader>i <action>(Resume)
+map <Leader>de <action>(EditBreakpoint)
+map <Leader>dt <action>(ToggleBreakpointEnabled)
+map <Leader>ee <action>(EvaluateExpression)
+map <Leader>rr <action>(RunToCursor)
+
+" Global find and replace
+nmap <Leader>fr <action>(ReplaceInPath)
+
+" Harpoon
+nmap <C-t> :action GotoHarpoon1<cr>
+nmap <C-h> :action GotoHarpoon2<cr>
+nmap <C-n> :action GotoHarpoon3<cr>
+nmap <C-s> :action GotoHarpoon4<cr>
+nmap <C-e> :action ShowHarpoon<cr>
+nmap <Leader>a :action AddToHarpoon<cr>
+
+" Folds
+map <Leader>zc <action>(CollapseAllRegions)
+map <Leader>zo <action>(ExpandAllRegions)
+
+" Other
+map <Leader>rn <action>(RenameElement)
+map <Leader>fa <action>(ReformatCode)
+map <Leader>fe <action>(ChangeFileEncodingAction)
+map <Leader>q <action>(ShowHoverInfo)
+map <Leader>Q <action>(QuickImplementations)
+map <Leader>K <action>(GitContextMenu)
+map <Leader>zen <action>(ToggleZenMode)
+
+" Comments
+map <Leader>cb <action>(CommentByBlockComment)
+map <Leader>cl <action>(CommentByLineComment)
+
+" Fuzzier
+map <Leader>sf <action>(com.mituuz.fuzzier.Fuzzier)
+map <Leader>mf <action>(com.mituuz.fuzzier.FuzzyMover)
+map <Leader>sg <action>(com.mituuz.fuzzier.FuzzierVCS)
+nmap <Leader>ff <action>(com.mituuz.fuzzier.FuzzyGrepCaseInsensitive)
+
+" Reverts selected lines
+map <Leader>grl <action>(Vcs.RollbackChangedLines)
+
+" Windows
+map <Leader>ter <action>(ActivateTerminalToolWindow)
+map <Leader>pr <action>(RecentProjectListGroup)
+
+" Extras
+map <Leader>gi <action>(GotoImplementation)
+map <Leader>sw <action>(EditorToggleUseSoftWraps)
+
+" AI
+" map <Leader>cc <action>(copilot.chat.show)
+" imap sss <action>(copilot.requestCompletions)
+
+map <Leader>cc <action>(ActivateAIAssistantToolWindow)
+map <Leader>ss <action>(AIAssistant.CodeGeneration.Actions.Regenerate)
