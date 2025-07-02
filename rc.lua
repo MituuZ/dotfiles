@@ -43,7 +43,7 @@ local my_apps = {
 }
 
 -- Match app to a tag
--- Defaults to `switchtotag = true, floating = true`
+-- Defaults to `switchtotag = true, floating = false`
 -- Uses a callback to prevent apps starting maximized and interfering with tiling
 local my_rules = {
 	firefox = { class = "firefox", tag = "web" },
